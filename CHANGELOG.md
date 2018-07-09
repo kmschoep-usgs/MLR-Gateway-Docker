@@ -9,3 +9,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Dockerfile
 - Dockerfile-DOI
 - Reference to Docker usage in Readme
+- docker-compose.env
+- docker-compose.yml
+- launch-app.sh
+- tomcat-wildcard-dev.crt
+- tomcat-wildcard-dev.csr
+- tomcat-wildcard-dev.key
+- oauthClientSecret.txt
+
+### Updated
+- Dockerfile to match pattern set by AQCU dockerfiles
