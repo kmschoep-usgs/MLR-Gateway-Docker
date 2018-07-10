@@ -5,7 +5,7 @@ if [ -n "${OAUTH_CLIENT_SECRET_PATH}" ] && [ -f "${OAUTH_CLIENT_SECRET_PATH}" ];
   oauthClientSecret=$(cat ${OAUTH_CLIENT_SECRET_PATH})
   else
   	echo "oauthClientSecret is not defined"
-  	exit 0
+  	exit 1
 fi
 
 if [ $dbPassword ]; then
