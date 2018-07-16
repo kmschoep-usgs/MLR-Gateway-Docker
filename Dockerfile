@@ -9,7 +9,11 @@ ADD launch-app.sh launch-app.sh
 RUN ["chmod", "+x", "launch-app.sh"]
 
 #Default ENV Values
+ENV requireSsl=true
 ENV serverPort=443
+
+ENV mlrgateway_springFrameworkLogLevel=info
+ENV serverContextPath=/
 ENV mlrgateway_ddotServers=http://localhost:6028
 ENV mlrgateway_legacyTransformerServers=http://localhost:6020
 ENV mlrgateway_legacyValidatorServers=http://localhost:6027
@@ -20,12 +24,23 @@ ENV ribbonMaxAutoRetries=0
 ENV ribbonConnectTimeout=6000
 ENV ribbonReadTimeout=60000
 ENV hystrixThreadTimeout=10000000
+
+ENV maintenanceRoles='default roles'
+ENV dbConnectionUrl=postgresUrl
+ENV dbUsername=mlr_db_username
+ENV dbPassword_file=/mlrgateway_dbPassword.txt
+
 ENV oauthClientId=client-id
 ENV oauthClientAccessTokenUri=https://example.gov/oauth/token
 ENV oauthClientAuthorizationUri=https://example.gov/oauth/authorize
 ENV oauthResourceTokenKeyUri=https://example.gov/oauth/token_key
 ENV oauthResourceId=resource-id
-
 ENV OAUTH_CLIENT_SECRET_PATH=/oauthClientSecret.txt
+
+ENV keystoreLocation=/localstore.jks
+ENV keystorePassword=password
+ENV keystoreSSLKey=default
+ENV TOMCAT_CERT_PATH=/tomcat-wildcard-ssl.crt
+ENV TOMCAT_KEY_PATH=/tomcat-wildcard-ssl.key
 
 ENV HEALTHY_RESPONSE_CONTAINS='{"status":"UP"}'
