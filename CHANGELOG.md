@@ -7,7 +7,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Dockerfile
-- Dockerfile-DOI
 - Reference to Docker usage in Readme
 - docker-compose.env
 - docker-compose.yml
@@ -23,3 +22,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Removed
 - docker-entrypoint.sh
+- Dockerfile-DOI
