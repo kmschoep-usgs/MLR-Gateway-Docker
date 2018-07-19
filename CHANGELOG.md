@@ -6,20 +6,28 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- Dockerfile
-- Reference to Docker usage in Readme
-- docker-compose.env
-- docker-compose.yml
-- launch-app.sh
-- tomcat-wildcard-dev.crt
-- tomcat-wildcard-dev.csr
-- tomcat-wildcard-dev.key
-- oauthClientSecret.txt
+- isuftin@usgs.gov - maintainer label in Dockerfile
+- isuftin@usgs.gov - health check label in Dockerfile
+- isuftin@usgs.gov - spring user ENV vars in Dockerfile
+- kmschoep@usgs.gov - Dockerfile
+- kmschoep@usgs.gov - Reference to Docker usage in Readme
+- kmschoep@usgs.gov - docker-compose.env
+- kmschoep@usgs.gov - docker-compose.yml
+- kmschoep@usgs.gov - launch-app.sh
+- kmschoep@usgs.gov - tomcat-wildcard-dev.crt
+- kmschoep@usgs.gov - tomcat-wildcard-dev.csr
+- kmschoep@usgs.gov - tomcat-wildcard-dev.key
+- kmschoep@usgs.gov - oauthClientSecret.txt
 
 ### Changed
-- Dockerfile to match pattern set by AQCU dockerfiles
-- launch-app.sh to improve error handling
+- isuftin@usgs.gov - Moved lines around in Dockerfile
+- isuftin@usgs.gov - keystoreLocation env var changed to pkcs12
+- isuftin@usgs.gov - Commented out travis test to check for running container.
+  This container does not yet run properly
+- kmschoep@usgs.gov - Dockerfile to match pattern set by AQCU dockerfiles
+- kmschoep@usgs.gov - launch-app.sh to improve error handling
+- kmschoep@usgs.gov - removed docker-compose.yml, replaced with config.env and secrets.env
 
 ### Removed
-- docker-entrypoint.sh
-- Dockerfile-DOI
+- kmschoep@usgs.gov - docker-entrypoint.sh
+- kmschoep@usgs.gov - Dockerfile-DOI
