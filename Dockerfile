@@ -2,15 +2,12 @@ FROM cidasdpdasartip.cr.usgs.gov:8447/wma/wma-spring-boot-base:latest
 
 LABEL maintaner="gs-w_eto@usgs.gov"
 
-ENV USER=${USER:-spring}
-ENV HOME=${HOME:-/home/$USER}
 ENV repo_name=mlr-maven-centralized
 ENV artifact_id=mlrgateway
 ENV artifact_version=0.4.0-SNAPSHOT
 ENV requireSsl=true
 ENV serverPort=443
 ENV mlrgateway_springFrameworkLogLevel=info
-ENV serverContextPath=/
 ENV mlrgateway_ddotServers=http://localhost:6028
 ENV mlrgateway_legacyTransformerServers=http://localhost:6020
 ENV mlrgateway_legacyValidatorServers=http://localhost:6027
@@ -29,20 +26,6 @@ ENV oauthClientAccessTokenUri=https://example.gov/oauth/token
 ENV oauthClientAuthorizationUri=https://example.gov/oauth/authorize
 ENV oauthResourceTokenKeyUri=https://example.gov/oauth/token_key
 ENV oauthResourceId=resource-id
-ENV keystoreLocation=$HOME/localstore.pkcs12
-ENV keystorePassword=password
-ENV keystoreSSLKey=default
-ENV TOMCAT_CERT_PATH=$HOME/tomcat-wildcard-ssl.crt
-ENV TOMCAT_KEY_PATH=$HOME/tomcat-wildcard-ssl.key
 ENV HEALTHY_RESPONSE_CONTAINS='{"status":"UP"}'
 
-COPY launch-app.sh launch-app.sh
-USER root
-RUN chown $USER:$USER launch-app.sh
-USER $USER
-RUN ["chmod", "+x", "launch-app.sh"]
-
 RUN ./pull-from-artifactory.sh ${repo_name} gov.usgs.wma ${artifact_id} ${artifact_version} app.jar
-
-HEALTHCHECK --interval=30s --timeout=3s \
-  CMD curl -k "https://127.0.0.1:${serverPort}${serverContextPath}${HEALTH_CHECK_ENDPOINT}" | grep -q ${HEALTHY_RESPONSE_CONTAINS} || exit 1
