@@ -1,10 +1,10 @@
-FROM cidasdpdasartip.cr.usgs.gov:8447/wma/wma-spring-boot-base:latest
+FROM cidasdpdasartip.cr.usgs.gov:8447/wma/wma-spring-boot-base:java8-0.0.2
 
 LABEL maintaner="gs-w_eto@usgs.gov"
 
 ENV repo_name=mlr-maven-centralized
 ENV artifact_id=mlrgateway
-ENV artifact_version=0.4.1-SNAPSHOT
+ENV artifact_version=0.4.1
 ENV requireSsl=true
 ENV serverPort=443
 ENV mlrgateway_springFrameworkLogLevel=info
