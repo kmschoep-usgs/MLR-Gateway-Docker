@@ -4,7 +4,7 @@ LABEL maintaner="gs-w_eto@usgs.gov"
 
 ENV repo_name=mlr-maven-centralized
 ENV artifact_id=mlrgateway
-ENV artifact_version=0.4.2-SNAPSHOT
+ENV artifact_version=0.4.2
 ENV requireSsl=true
 ENV serverPort=443
 ENV mlrgateway_springFrameworkLogLevel=info
