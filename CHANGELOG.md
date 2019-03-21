@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - kmschoep@usgs.gov - Dockerfile to match pattern set by AQCU dockerfiles
 - kmschoep@usgs.gov - launch-app.sh to improve error handling
 - kmschoep@usgs.gov - removed docker-compose.yml, replaced with config.env and secrets.env
+- kmschoep@usgs.gov - use version 0.0.4 wma-spring-boot-base docker image from dockerhub
 
 ### Removed
 - kmschoep@usgs.gov - docker-entrypoint.sh
